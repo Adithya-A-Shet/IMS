@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            padding: 10px;
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .dropdown {
+            cursor: pointer;
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        .dropdown h3 {
+            margin: 0;
+            color: #50b3a2;
+            font-size: 1.2em;
+        }
+        .dropdown-content {
+            display: none;
+            padding: 10px;
+            border-left: 3px solid #50b3a2;
+            background-color: #fafafa;
+        }
+        .dropdown-content p {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Notes</h1>
+
+    <div class="container">
+        <div class="dropdown" id="papers">
+            <h3>Papers</h3>
+            <div class="dropdown-content" id="papers-content">
+                <p>List of papers...</p>
+            </div>
+        </div>
+        <div class="dropdown" id="class-notes">
+            <h3>Class Notes</h3>
+            <div class="dropdown-content" id="class-notes-content">
+                <p>List of class notes...</p>
+            </div>
+        </div>
+        <div class="dropdown" id="class-ppt">
+            <h3>Class PPT</h3>
+            <div class="dropdown-content" id="class-ppt-content">
+                <p>List of class PPTs...</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('.dropdown').forEach(item => {
+            item.addEventListener('click', function() {
+                let content = this.querySelector('.dropdown-content');
+                content.style.display = content.style.display === 'block' ? 'none' : 'block';
+            });
+        });
+    </script>
+</body>
+</html>
